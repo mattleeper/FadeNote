@@ -1,0 +1,22 @@
+﻿@model FadeNote.Web.Models.PINViewModel;
+@{
+    ViewData["Title"] = "Pin";
+}
+
+<h2>PIN Required for this secret</h2>
+@using (Html.BeginForm("Note", "Home", FormMethod.Get))
+{
+    @Html.HiddenFor(m => m.Id)
+    <div>
+        <div>
+            @Html.LabelFor(m => m.PIN)
+        </div>
+        <div>
+            @Html.PasswordFor(m => m.PIN)
+        </div>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+}
+

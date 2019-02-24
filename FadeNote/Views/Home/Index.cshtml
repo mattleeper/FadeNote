@@ -1,0 +1,45 @@
+﻿@model FadeNote.Web.Models.NewNoteViewModel
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Share Self Burning Secret Notes</h2>
+        @using (Html.BeginForm("Note", "Home", FormMethod.Post))
+        {
+        <div>
+            <div>
+                @Html.LabelFor(m => m.Content)
+            </div>
+            <div>
+                @Html.TextAreaFor(m => m.Content)
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(m => m.MaxReads)
+            </div>
+            <div>
+                @Html.EditorFor(m => m.MaxReads)
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(m => m.PIN)
+            </div>
+            <div>
+                @Html.PasswordFor(m => m.PIN)
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.LabelFor(m => m.Expiry)
+            </div>
+            <div>
+                @Html.EditorFor(m => m.Expiry)
+            </div>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        }
+    </div>
+</div>
