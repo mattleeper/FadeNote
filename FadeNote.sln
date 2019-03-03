@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FadeNote.Web", "FadeNote\FadeNote.Web.csproj", "{1E70598D-0A99-402E-8269-94F639470A54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FadeNote.Web", "FadeNote\FadeNote.Web.csproj", "{1E70598D-0A99-402E-8269-94F639470A54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FadeNote.Domain", "FadeNote.Domain\FadeNote.Domain.csproj", "{D3F7B89A-257D-40BE-9691-0BF969C52728}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FadeNote.Domain", "FadeNote.Domain\FadeNote.Domain.csproj", "{D3F7B89A-257D-40BE-9691-0BF969C52728}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

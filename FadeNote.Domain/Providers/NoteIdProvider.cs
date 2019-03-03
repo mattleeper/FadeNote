@@ -5,7 +5,7 @@ namespace FadeNote.Domain.Providers
     /// <summary>
     /// Generates the Ids for a note
     /// </summary>
-    public class NoteIdProvider
+    public class NoteIdProvider : INoteIdProvider
     {
         public string New()
         {
