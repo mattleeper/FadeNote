@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FadeNote.Core\FadeNote.Core.csproj" />
     <ProjectReference Include="..\FadeNote.Domain\FadeNote.Domain.csproj" />
   </ItemGroup>
 

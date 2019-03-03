@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FadeNote.Web", "FadeNote\Fa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FadeNote.Domain", "FadeNote.Domain\FadeNote.Domain.csproj", "{D3F7B89A-257D-40BE-9691-0BF969C52728}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FadeNote.Storage", "FadeNote.Storage\FadeNote.Storage.csproj", "{EDF8839E-46A0-449E-B4F3-D4F246A3123C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FadeNote.Core", "FadeNote.Core\FadeNote.Core.csproj", "{D8EFCBDF-187A-4AB3-9C16-D330A444BF36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D3F7B89A-257D-40BE-9691-0BF969C52728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3F7B89A-257D-40BE-9691-0BF969C52728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3F7B89A-257D-40BE-9691-0BF969C52728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF8839E-46A0-449E-B4F3-D4F246A3123C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF8839E-46A0-449E-B4F3-D4F246A3123C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF8839E-46A0-449E-B4F3-D4F246A3123C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF8839E-46A0-449E-B4F3-D4F246A3123C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8EFCBDF-187A-4AB3-9C16-D330A444BF36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8EFCBDF-187A-4AB3-9C16-D330A444BF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8EFCBDF-187A-4AB3-9C16-D330A444BF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8EFCBDF-187A-4AB3-9C16-D330A444BF36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
