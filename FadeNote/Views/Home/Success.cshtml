@@ -1,13 +1,13 @@
 ﻿@model FadeNote.Web.Models.NewResponseViewModel
-<div class="row">
-    <div class="col-md-3">
+    <div class="page-header">
         <h2>Success</h2>
-            <div>
-                @Html.DisplayFor(m => m.Message)
-            </div>
-            <div>
-                @Html.LabelFor(m => m.URL)
-                <a href="@Model.URL">Share this link</a>
-            </div>
     </div>
-</div>
+    <div>
+        <div class="alert alert-success" role="alert">
+            @Html.DisplayFor(m => m.Message)
+        </div>
+        <div class="alert alert-info" role="alert">
+            @Html.LabelFor(m => m.URL)
+            <a href="@Model.URL">Share this link</a>
+        </div>
+    </div>

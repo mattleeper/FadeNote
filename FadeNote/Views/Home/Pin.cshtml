@@ -2,21 +2,19 @@
 @{
     ViewData["Title"] = "Pin";
 }
-
-<h2>PIN Required for this secret</h2>
-@using (Html.BeginForm("Note", "Home", FormMethod.Get))
-{
-    @Html.HiddenFor(m => m.Id)
-    <div>
+    <div class="page-header">
+        <h2>PIN Required for this secret</h2>
+    </div>
+    @using (Html.BeginForm("Note", "Home", FormMethod.Get))
+    {
+        @Html.HiddenFor(m => m.Id)
         <div>
-            @Html.LabelFor(m => m.PIN)
+            <div class="form-group">
+                @Html.LabelFor(m => m.PIN)
+                @Html.PasswordFor(m => m.PIN, new { @class = "form-control" })
+            </div>
         </div>
         <div>
-            @Html.PasswordFor(m => m.PIN)
+            <button type="submit" class="btn btn-default">Submit</button>
         </div>
-    </div>
-    <div>
-        <button type="submit">Submit</button>
-    </div>
-}
-
+    }

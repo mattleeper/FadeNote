@@ -1,26 +1,28 @@
 ﻿@model FadeNote.Web.Models.NoteViewModel
-<div class="row">
-    <div class="col-md-3">
+
+    <div class="page-header">
         <h2>Here's your secret Note</h2>
-        <div>
-            <div>
-                @Html.LabelFor(m => m.Content)
+    </div>
+    <div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">@Html.LabelFor(m => m.Content)</h3>
             </div>
-            <div>
+            <div class="panel-body">
                 @Html.DisplayFor(m => m.Content)
             </div>
-            @if (Model.Deleted)
-            {
-                <div>
-                    This note has been deleted! You have the only copy.
-                </div>
-            }
-            else if (Model.ReadsLeft > 0)
-            {
-                <div>
-                    This note can be read @Model.ReadsLeft more times.
-                </div>
-            }
         </div>
+
+        @if (Model.Deleted)
+        {
+            <div class="alert alert-danger" role="alert">
+                This note has been deleted! You have the only copy.
+            </div>
+        }
+        else if (Model.ReadsLeft > 0)
+        {
+            <div class="alert alert-warning" role="alert">
+                This note can be read @Model.ReadsLeft more times.
+            </div>
+        }
     </div>
-</div>
