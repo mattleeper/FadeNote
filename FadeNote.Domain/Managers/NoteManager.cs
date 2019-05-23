@@ -29,6 +29,12 @@ namespace FadeNote.Domain.Managers
             return note.Id;
         }
 
+        /// <summary>
+        /// Check for a note and validate pin
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="pin"></param>
+        /// <returns></returns>
         public (bool, Note) Get(string id, string pin)
         {
             var note = Storage.Retrieve(id);

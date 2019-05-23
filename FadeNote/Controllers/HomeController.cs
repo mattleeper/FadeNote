@@ -46,6 +46,7 @@ namespace FadeNote.Web.Controllers
         #region Note
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Note(NewNoteViewModel note)
         {
             if (note != null)
@@ -83,26 +84,29 @@ namespace FadeNote.Web.Controllers
         [HttpGet]
         public IActionResult Note(string id, string pin)
         {
-            (var pinRequired, var dataModel)  = manager.Get(id, pin);
-
-            if (pinRequired)
+            if (!string.IsNullOrWhiteSpace(id))
             {
-                return View("pin", new PINViewModel {Id = id });
-            }
+                (var pinRequired, var dataModel) = manager.Get(id, pin);
 
-            if (dataModel != null)
-            {
-                var viewModel = new NoteViewModel
+                if (pinRequired)
                 {
-                    Content = dataModel.Content,
-                    Deleted = dataModel.MaxReads > 0 && dataModel.CurrentReads >= dataModel.MaxReads,
-                    ReadsLeft = dataModel.MaxReads - dataModel.CurrentReads,
-                    Expiry = dataModel.Expiry
-                };
-                return View(viewModel);
+                    return View("pin", new PINViewModel { Id = id });
+                }
+
+                if (dataModel != null)
+                {
+                    var viewModel = new NoteViewModel
+                    {
+                        Content = dataModel.Content,
+                        Deleted = dataModel.MaxReads > 0 && dataModel.CurrentReads >= dataModel.MaxReads,
+                        ReadsLeft = dataModel.MaxReads - dataModel.CurrentReads,
+                        Expiry = dataModel.Expiry
+                    };
+                    return View(viewModel);
+                }
             }
-            else
-                return View("NotFound");
+
+            return View("NotFound");
         }
 
         #endregion Note
