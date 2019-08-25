@@ -20,13 +20,17 @@ namespace FadeNote.Domain.Managers
         /// Adds a new note to storage. will return an id for the note.
         /// </summary>
         /// <returns></returns>
-        public string Create(Note note)
+        public CreateResponse Create(Note note)
         {
             note.Id = IdProvider.New();
             note.Created = DateTime.UtcNow;
-            Storage.Add(note);
-
-            return note.Id;
+            note.Expiry = note.Expiry > DateTime.MinValue ? note.Expiry : DateTime.UtcNow.AddHours(1);
+            
+            return new CreateResponse {
+                Id = note.Id,
+                Success = Storage.Add(note),
+                Expiry = note.Expiry
+            };
         }
 
         /// <summary>

@@ -2,7 +2,6 @@
 using FadeNote.Domain.Models;
 using FadeNote.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Diagnostics;
 
 namespace FadeNote.Web.Controllers
@@ -62,24 +61,24 @@ namespace FadeNote.Web.Controllers
             {
                 var dataNote = new Note
                 {
-                    Expiry = note.Expiry > DateTime.MinValue ? note.Expiry : DateTime.UtcNow.AddHours(1),
+                    Expiry = note.Expiry,
                     Content = note.Content,
                     MaxReads = note.MaxReads,
                     PIN = note.PIN
                 };
 
-                var newNoteId = manager.Create(dataNote);
+                var createResponse = manager.Create(dataNote);
 
-                if (!string.IsNullOrWhiteSpace(newNoteId))
+                if (createResponse?.Success ?? false && !string.IsNullOrWhiteSpace(createResponse?.Id))
                 {
-                    string message = string.Format("Your FadeNote has been created. It will expire at {0} or when it is read {1} times. Which ever happens first.", note.Expiry, note.MaxReads);
+                    string message = string.Format("Your FadeNote has been created. It will expire at {0} or when it is read {1} times. Which ever happens first.", createResponse.Expiry, note.MaxReads);
 
                     var response = new NewResponseViewModel()
                     {
-                        Id = newNoteId,
+                        Id = createResponse.Id,
                         Message = message,
-                        URL = Url.Link("Note", new { Id = newNoteId }),
-                        Expiry = dataNote.Expiry,
+                        URL = Url.Link("Note", new { Id = createResponse.Id }),
+                        Expiry = createResponse.Expiry,
                         MaxReads = note.MaxReads,
                     };
 
