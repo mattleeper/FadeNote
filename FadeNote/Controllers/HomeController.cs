@@ -18,6 +18,10 @@ namespace FadeNote.Web.Controllers
 
         #region Page
 
+        /// <summary>
+        /// Home page
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             return View();
@@ -44,7 +48,12 @@ namespace FadeNote.Web.Controllers
         #endregion Page
 
         #region Note
-
+        
+        /// <summary>
+        /// Used for creating a new note. 
+        /// </summary>
+        /// <param name="note"></param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Note(NewNoteViewModel note)
@@ -81,6 +90,12 @@ namespace FadeNote.Web.Controllers
             return View("Index");
         }
 
+        /// <summary>
+        /// Used for retrieving an existing note. 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="pin"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Note(string id, string pin)
         {
