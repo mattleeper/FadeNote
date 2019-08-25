@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FadeNote.Web", "FadeNote\FadeNote.Web.csproj", "{1E70598D-0A99-402E-8269-94F639470A54}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FadeNote.Domain", "FadeNote.Domain\FadeNote.Domain.csproj", "{D3F7B89A-257D-40BE-9691-0BF969C52728}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FadeNote.Api", "FadeNote.Api\FadeNote.Api.csproj", "{AA61AD8D-F9F6-406E-B2A1-4779C6B444E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D3F7B89A-257D-40BE-9691-0BF969C52728}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3F7B89A-257D-40BE-9691-0BF969C52728}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3F7B89A-257D-40BE-9691-0BF969C52728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA61AD8D-F9F6-406E-B2A1-4779C6B444E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA61AD8D-F9F6-406E-B2A1-4779C6B444E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA61AD8D-F9F6-406E-B2A1-4779C6B444E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA61AD8D-F9F6-406E-B2A1-4779C6B444E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
